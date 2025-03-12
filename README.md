@@ -62,7 +62,7 @@ A modern, elegant, and visually immersive website for renowned Indian artist Suh
 
 ## Credits
 
-- Design and Development: [Your Name]
+- Design and Development: Somnath Rajbanshi
 - Artist: Suhas Roy (fictional)
 - Font Awesome for icons
 - Google Fonts for typography
