@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Rajiv Mehta",
+    "title": "Art Collector & Patron",
+    "image": "images/testimonials/testimonial1.jpg",
+    "quote": "Suhas Roy's work transcends mere visual appeal; it speaks to the soul. His masterful blend of traditional Indian aesthetics with contemporary sensibilities creates art that is both timeless and relevant. I'm proud to have several of his pieces in my collection."
+  },
+  {
+    "id": 2,
+    "name": "Dr. Amrita Sen",
+    "title": "Art Historian, Delhi University",
+    "image": "images/testimonials/testimonial2.jpg",
+    "quote": "In the landscape of contemporary Indian art, Suhas Roy stands as a beacon of authentic expression. His work demonstrates a profound understanding of India's rich artistic heritage while boldly pushing boundaries. His contribution to modern Indian art is immeasurable."
+  },
+  {
+    "id": 3,
+    "name": "Vikram Bhatia",
+    "title": "Gallery Owner, Mumbai",
+    "image": "images/testimonials/testimonial3.jpg",
+    "quote": "Having exhibited Suhas Roy's work for over a decade, I've witnessed firsthand the emotional response his art evokes in viewers. His pieces consistently sell out, appealing to both seasoned collectors and newcomers to the art world. His artistic vision is truly exceptional."
+  },
+  {
+    "id": 4,
+    "name": "Priya Sharma",
+    "title": "Art Critic & Journalist",
+    "image": "images/testimonials/testimonial4.jpg",
+    "quote": "What distinguishes Suhas Roy in today's crowded art scene is his authentic voice. His work doesn't chase trends but rather creates them. Each piece tells a story that is deeply rooted in Indian culture yet speaks a universal language that resonates globally."
+  },
+  {
+    "id": 5,
+    "name": "Arjun Kapoor",
+    "title": "First-time Art Buyer",
+    "image": "images/testimonials/testimonial5.jpg",
+    "quote": "As someone new to art collecting, I was intimidated by the process. Suhas not only created a stunning piece for my home but also took the time to explain his creative process. His artwork has transformed my space and continues to inspire conversations among guests."
+  },
+  {
+    "id": 6,
+    "name": "Meera Reddy",
+    "title": "Interior Designer",
+    "image": "images/testimonials/testimonial6.jpg",
+    "quote": "I've incorporated Suhas Roy's artwork in several high-profile design projects. His pieces have an extraordinary ability to elevate a space, creating focal points that radiate energy and depth. Clients are invariably drawn to his work, recognizing its exceptional quality and emotional impact."
+  }
+] 

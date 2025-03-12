@@ -1,0 +1,79 @@
+Design a modern, elegant, and visually immersive HTML, CSS, and JavaScript website for a renowned Indian artist with 100+ artworks. The website should have a luxurious and professional feel with smooth navigation and engaging UI/UX.
+
+Key Features & Structure:
+
+1. Technology Stack:
+
+Only HTML, CSS, and JavaScript (No PHP).
+
+Use JSON files for dummy data on every page and every section, which will later be replaced with MySQL data.
+
+
+2. Header Section:
+
+A fixed, modern navigation bar with the following menu items:
+
+Home
+
+Available Artworks (Collection, New Arrivals) ✅ (Ensure "Available Artworks" stays on the same line)
+
+Exhibitions
+
+Events (Current Events, Past Events)
+
+Media (Publications, News, Videos, Photographs)
+
+About
+
+Contact Me ✅ (Ensure "Contact Me" stays on the same line)
+
+Theme Toggle Button:
+
+Placed at the top-right corner after the header or above the top-right of the header.
+
+
+
+3. Hero Section:
+
+A high-quality artist image as a central representation.
+
+Apply a parallax or fade-in animation to enhance the aesthetics.
+
+
+4. Available Artworks Page:
+
+Dynamically load paintings using dummy JSON data.
+
+Display each artwork with:
+
+Title, Description, Price, Availability Status, Purchase Inquiry Button.
+
+
+Filter & Search feature for easy navigation.
+
+
+5. ‘My Other Website’ Section (Above Footer):
+
+Display fellow artists’ websites with:
+
+Artist’s Name, Profile Image, Website Link.
+
+
+
+6. Beautiful Footer (Not a Simple WordPress Footer):
+
+A custom-designed footer including:
+
+Copyright Notice, Social Media Links, Contact Info, Quick Links.
+
+
+
+7. Additional Enhancements:
+
+Smooth animations & transitions for a premium feel.
+
+Dark mode/light mode toggle option.
+
+Fully responsive design for mobile, tablet, and desktop.
+
+Interactive elements (hover effects, lazy loading for images).

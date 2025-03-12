@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | Suhas Roy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Suhas Roy</a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li ><a href="artworks.html">Available Artworks</a></li>
+                    <li><a href="exhibitions.html">Exhibitions</a></li>
+                    <li class="dropdown">
+                        <a href="events.html">Events</a>
+                        <div class="dropdown-content">
+                            <a href="current-events.html">Current Events</a>
+                            <a href="past-events.html">Past Events</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="media.html">Media</a>
+                        <div class="dropdown-content">
+                            <a href="publications.html">Publications</a>
+                            <a href="news.html">News</a>
+                            <a href="videos.html">Videos</a>
+                            <a href="photographs.html">Photographs</a>
+                        </div>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact Me</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Contact Me</h1>
+            <p>Get in touch for inquiries, commissions, or just to say hello</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <p>Feel free to reach out through any of the following channels. I typically respond within 24-48 hours.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Studio Address</h3>
+                                <p>Studio 42, Art District<br>Kolkata, West Bengal 700001<br>India</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Phone</h3>
+                                <p>+91 98765 43210</p>
+                                <p>Studio: +91 33 2345 6789</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Email</h3>
+                                <p>contact@suhasroy.com</p>
+                                <p>inquiries@suhasroy.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Studio Hours</h3>
+                                <p>Monday - Friday: 10:00 AM - 6:00 PM</p>
+                                <p>Saturday: By appointment only</p>
+                                <p>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-connect">
+                        <h3>Connect With Me</h3>
+                        <div class="social-icons">
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <h2>Send Me a Message</h2>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject <span class="required">*</span></label>
+                                <select id="subject" name="subject" required>
+                                    <option value="" disabled selected>Select a subject</option>
+                                    <option value="artwork-inquiry">Artwork Inquiry</option>
+                                    <option value="commission">Commission Request</option>
+                                    <option value="exhibition">Exhibition Opportunity</option>
+                                    <option value="media">Media/Press Inquiry</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Subscribe to my newsletter for updates on new artworks and exhibitions</label>
+                        </div>
+                        
+                        <button type="submit" class="btn primary-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Visit My Studio</h2>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7371.849464252119!2d88.323305!3d22.507007!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027b60ac40c64f%3A0x43a0c154cf619142!2s25%2C%20SN%20Roy%20Rd%2C%20Sahapur%2C%20Behala%2C%20Kolkata%2C%20West%20Bengal%20700034!5e0!3m2!1sen!2sin!4v1707715295526!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="545" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="map-info">
+                <p><i class="fas fa-map-marker-alt"></i> 25, SN Roy Rd, Sahapur, Behala, Kolkata, West Bengal 700034</p>
+                <p><i class="fas fa-directions"></i> <a href="https://www.google.com/maps/search/?api=1&query=25,+S+N+Roy+Road,+Kolkata,+700038,+West+Bengal,+India" target="_blank" rel="noopener noreferrer">Get Directions</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container" id="faq-container">
+                <!-- FAQ items will be loaded from JSON -->
+            </div>
+        </div>
+    </section>
+
+   <!-- Other Artists Section -->
+   <section class="other-artists">
+    <div class="container">
+        <h2 class="section-title">My Other Websites</h2>
+        <div class="artists-grid">
+            <!-- Hardcoded artist items -->
+            <div class="artist-item">
+                <div class="artist-image">
+                    <img src="images/artists/artist1.jpg" alt="Contemporary Art Gallery">
+                </div>
+                <h3 class="artist-name">Contemporary Art Gallery</h3>
+                <a href="https://www.contemporaryartgallery.com" class="artist-website" target="_blank"
+                    rel="noopener noreferrer">Visit Website</a>
+            </div>
+
+            <div class="artist-item">
+                <div class="artist-image">
+                    <img src="images/artists/artist2.jpg" alt="Indian Art Heritage">
+                </div>
+                <h3 class="artist-name">Indian Art Heritage</h3>
+                <a href="https://www.indianartheritage.org" class="artist-website" target="_blank"
+                    rel="noopener noreferrer">Visit Website</a>
+            </div>
+
+            <div class="artist-item">
+                <div class="artist-image">
+                    <img src="images/artists/artist3.jpg" alt="Art Workshops Online">
+                </div>
+                <h3 class="artist-name">Art Workshops Online</h3>
+                <a href="https://www.artworkshopsonline.com" class="artist-website" target="_blank"
+                    rel="noopener noreferrer">Visit Website</a>
+            </div>
+
+            <div class="artist-item">
+                <div class="artist-image">
+                    <img src="images/artists/artist4.jpg" alt="Traditional Techniques">
+                </div>
+                <h3 class="artist-name">Traditional Techniques</h3>
+                <a href="https://www.traditionaltechniques.art" class="artist-website" target="_blank"
+                    rel="noopener noreferrer">Visit Website</a>
+            </div>
+
+            <div class="artist-item">
+                <div class="artist-image">
+                    <img src="images/artists/artist5.jpg" alt="Art Materials Shop">
+                </div>
+                <h3 class="artist-name">Art Materials Shop</h3>
+                <a href="https://www.artmaterialsshop.com" class="artist-website" target="_blank"
+                    rel="noopener noreferrer">Visit Website</a>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Suhas Roy</h3>
+                    <p>Creating timeless art that speaks to the soul</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="artworks.html">Artworks</a></li>
+                        <li><a href="exhibitions.html">Exhibitions</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Information</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Studio 42, Art District, Kolkata, India</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> contact@suhasroy.com</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Me</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Suhas Roy. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/faq.js"></script>
+    
+    <!-- Other existing scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html> 

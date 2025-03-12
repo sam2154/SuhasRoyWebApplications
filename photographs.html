@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photographs | Suhas Roy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="light-mode">
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Suhas Roy</a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="artworks.html">Available Artworks</a></li>
+                    <li><a href="exhibitions.html">Exhibitions</a></li>
+                    <li class="dropdown">
+                        <a href="events.html">Events</a>
+                        <div class="dropdown-content">
+                            <a href="current-events.html">Current Events</a>
+                            <a href="past-events.html">Past Events</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="media.html" class="active">Media</a>
+                        <div class="dropdown-content">
+                            <a href="publications.html">Publications</a>
+                            <a href="news.html">News</a>
+                            <a href="videos.html">Videos</a>
+                            <a href="photographs.html" class="active">Photographs</a>
+                        </div>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact Me</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Photographs</h1>
+            <p>A visual journey through Suhas Roy's life, exhibitions, and artistic process</p>
+        </div>
+    </section>
+
+    <!-- Photographs Section -->
+    <section class="photographs-page">
+        <div class="container">
+            <div class="photographs-filters">
+                <div class="filter-group">
+                    <label for="year-filter">Filter by Year:</label>
+                    <select id="year-filter">
+                        <option value="all">All Years</option>
+                        <!-- Years will be populated by JavaScript -->
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="photographer-filter">Filter by Photographer:</label>
+                    <select id="photographer-filter">
+                        <option value="all">All Photographers</option>
+                        <!-- Photographers will be populated by JavaScript -->
+                    </select>
+                </div>
+                <div class="search-group">
+                    <input type="text" id="photograph-search" placeholder="Search photographs...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+
+            <div class="photographs-grid" id="all-photographs">
+                <!-- Photographs will be populated by JavaScript -->
+            </div>
+
+            <div class="no-results" style="display: none;">
+                <p>No photographs match your search criteria. Please try different filters.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Suhas Roy</h3>
+                    <p>Creating timeless art that speaks to the soul</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="artworks.html">Artworks</a></li>
+                        <li><a href="exhibitions.html">Exhibitions</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Information</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Studio 42, Art District, Kolkata, India</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> contact@suhasroy.com</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Me</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Suhas Roy. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Photograph Modal -->
+    <div class="media-modal photograph-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="photograph-modal-content">
+                <div class="photograph-modal-image">
+                    <img id="modal-photograph-image" src="" alt="Photograph">
+                </div>
+                <div class="photograph-modal-details">
+                    <h2 id="modal-photograph-title"></h2>
+                    <p id="modal-photograph-photographer"></p>
+                    <div id="modal-photograph-description"></div>
+                    <div class="photograph-modal-actions">
+                        <button class="btn primary-btn" id="fullscreen-btn">View Fullscreen</button>
+                        <button class="btn secondary-btn share-btn">Share <i class="fas fa-share-alt"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/photographs.js"></script>
+</body>
+</html> 

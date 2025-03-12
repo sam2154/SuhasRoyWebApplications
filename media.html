@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media | Suhas Roy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="light-mode">
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Suhas Roy</a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="artworks.html">Available Artworks</a></li>
+                    <li><a href="exhibitions.html">Exhibitions</a></li>
+                    <li class="dropdown">
+                        <a href="events.html">Events</a>
+                        <div class="dropdown-content">
+                            <a href="current-events.html">Current Events</a>
+                            <a href="past-events.html">Past Events</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="media.html" class="active">Media</a>
+                        <div class="dropdown-content">
+                            <a href="publications.html">Publications</a>
+                            <a href="news.html">News</a>
+                            <a href="videos.html">Videos</a>
+                            <a href="photographs.html">Photographs</a>
+                        </div>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact Me</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Media</h1>
+            <p>Explore publications, news, videos, and photographs featuring Suhas Roy</p>
+        </div>
+    </section>
+
+    <!-- Media Categories Section -->
+    <section class="media-categories">
+        <div class="container">
+            <div class="category-tabs">
+                <a href="#publications" class="category-tab active" data-category="publications">Publications</a>
+                <a href="#news" class="category-tab" data-category="news">News</a>
+                <a href="#videos" class="category-tab" data-category="videos">Videos</a>
+                <a href="#photographs" class="category-tab" data-category="photographs">Photographs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="media-section publications-section">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
+            <div class="publications-grid">
+                <div class="publication-item">
+                    <div class="publication-image">
+                        <img src="images/media/publication1.jpg" alt="The Art of Suhas Roy">
+                    </div>
+                    <div class="publication-details">
+                        <h3 class="publication-title">The Art of Suhas Roy: A Retrospective</h3>
+                        <p class="publication-author">By Dr. Alka Pande</p>
+                        <p class="publication-publisher">Published by Roli Books, 2023</p>
+                        <p class="publication-description">A comprehensive retrospective of Suhas Roy's artistic journey spanning over three decades, featuring critical essays and over 200 color plates of his most significant works.</p>
+                        <a href="#" class="btn secondary-btn">View Details</a>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-image">
+                        <img src="images/media/publication2.jpg" alt="Contemporary Indian Art">
+                    </div>
+                    <div class="publication-details">
+                        <h3 class="publication-title">Contemporary Indian Art: New Directions</h3>
+                        <p class="publication-author">Edited by Gayatri Sinha</p>
+                        <p class="publication-publisher">Published by Thames & Hudson, 2022</p>
+                        <p class="publication-description">A landmark publication featuring Suhas Roy among other prominent contemporary Indian artists, exploring new trends and directions in Indian art in the 21st century.</p>
+                        <a href="#" class="btn secondary-btn">View Details</a>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-image">
+                        <img src="images/media/publication3.jpg" alt="Spiritual Dimensions">
+                    </div>
+                    <div class="publication-details">
+                        <h3 class="publication-title">Spiritual Dimensions in Contemporary Art</h3>
+                        <p class="publication-author">By Ranjit Hoskote</p>
+                        <p class="publication-publisher">Published by Mapin Publishing, 2021</p>
+                        <p class="publication-description">An exploration of spirituality in contemporary Indian art, featuring a dedicated chapter on Suhas Roy's meditative works and their philosophical underpinnings.</p>
+                        <a href="#" class="btn secondary-btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="center-btn">
+                <a href="publications.html" class="btn primary-btn">View All Publications</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="media-section news-section">
+        <div class="container">
+            <h2 class="section-title">News</h2>
+            <div class="news-grid">
+                <div class="news-item">
+                    <div class="news-image">
+                        <img src="images/media/news1.jpg" alt="National Award">
+                    </div>
+                    <div class="news-details">
+                        <span class="news-date">May 15, 2024</span>
+                        <h3 class="news-title">Suhas Roy Receives National Award for Outstanding Contribution to Indian Art</h3>
+                        <p class="news-source">The Times of India</p>
+                        <p class="news-excerpt">Renowned artist Suhas Roy was honored with the prestigious National Award for his outstanding contribution to Indian art at a ceremony held in New Delhi yesterday...</p>
+                        <a href="#" class="btn text-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-image">
+                        <img src="images/media/news2.jpg" alt="International Exhibition">
+                    </div>
+                    <div class="news-details">
+                        <span class="news-date">April 3, 2024</span>
+                        <h3 class="news-title">Suhas Roy's Works to be Featured in Major International Exhibition in Paris</h3>
+                        <p class="news-source">Art News Magazine</p>
+                        <p class="news-excerpt">The Musée d'Art Moderne de Paris has announced a major exhibition of contemporary Indian art, featuring a significant collection of works by Suhas Roy...</p>
+                        <a href="#" class="btn text-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-image">
+                        <img src="images/media/news3.jpg" alt="New Studio">
+                    </div>
+                    <div class="news-details">
+                        <span class="news-date">March 12, 2024</span>
+                        <h3 class="news-title">Suhas Roy Opens New Studio and Gallery Space in Kolkata</h3>
+                        <p class="news-source">The Hindu</p>
+                        <p class="news-excerpt">Artist Suhas Roy has inaugurated a new studio and gallery space in Kolkata's art district, designed to serve as both a working studio and a public exhibition space...</p>
+                        <a href="#" class="btn text-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="center-btn">
+                <a href="news.html" class="btn primary-btn">View All News</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="media-section videos-section">
+        <div class="container">
+            <h2 class="section-title">Videos</h2>
+            <div class="videos-grid">
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="images/media/video1.jpg" alt="Studio Visit">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-details">
+                        <h3 class="video-title">Studio Visit: The Creative Process of Suhas Roy</h3>
+                        <p class="video-duration"><i class="far fa-clock"></i> 18:35</p>
+                        <p class="video-description">An intimate look into Suhas Roy's studio and creative process, featuring an interview about his inspirations, techniques, and artistic philosophy.</p>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="images/media/video2.jpg" alt="Exhibition Opening">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-details">
+                        <h3 class="video-title">Exhibition Opening: "Transcending Boundaries" at National Gallery</h3>
+                        <p class="video-duration"><i class="far fa-clock"></i> 12:47</p>
+                        <p class="video-description">Coverage of the opening night of Suhas Roy's major solo exhibition "Transcending Boundaries" at the National Gallery of Modern Art in New Delhi.</p>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="images/media/video3.jpg" alt="Artist Talk">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-details">
+                        <h3 class="video-title">Artist Talk: The Evolution of Indian Contemporary Art</h3>
+                        <p class="video-duration"><i class="far fa-clock"></i> 45:22</p>
+                        <p class="video-description">A lecture by Suhas Roy at the India International Centre discussing the evolution of contemporary Indian art and his place within this tradition.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="center-btn">
+                <a href="videos.html" class="btn primary-btn">View All Videos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photographs Section -->
+    <section id="photographs" class="media-section photographs-section">
+        <div class="container">
+            <h2 class="section-title">Photographs</h2>
+            <div class="photographs-grid">
+                <div class="photograph-item">
+                    <img src="images/media/photo1.jpg" alt="Suhas Roy in Studio">
+                    <div class="photograph-overlay">
+                        <div class="photograph-details">
+                            <h3>Suhas Roy in His Studio, 2023</h3>
+                            <p>Photograph by Raghu Rai</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photograph-item">
+                    <img src="images/media/photo2.jpg" alt="Exhibition Installation">
+                    <div class="photograph-overlay">
+                        <div class="photograph-details">
+                            <h3>Installation View, Jehangir Art Gallery, 2022</h3>
+                            <p>Photograph by Dayanita Singh</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photograph-item">
+                    <img src="images/media/photo3.jpg" alt="Artist Portrait">
+                    <div class="photograph-overlay">
+                        <div class="photograph-details">
+                            <h3>Portrait of the Artist, 2021</h3>
+                            <p>Photograph by Pablo Bartholomew</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photograph-item">
+                    <img src="images/media/photo4.jpg" alt="Working on Canvas">
+                    <div class="photograph-overlay">
+                        <div class="photograph-details">
+                            <h3>Working on 'Spiritual Resonance' Series, 2023</h3>
+                            <p>Photograph by Ketaki Sheth</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photograph-item">
+                    <img src="images/media/photo5.jpg" alt="Artist with Collectors">
+                    <div class="photograph-overlay">
+                        <div class="photograph-details">
+                            <h3>With Collectors at India Art Fair, 2024</h3>
+                            <p>Photograph by Sooni Taraporevala</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photograph-item">
+                    <img src="images/media/photo6.jpg" alt="Early Career">
+                    <div class="photograph-overlay">
+                        <div class="photograph-details">
+                            <h3>Early Career, Santiniketan, 1995</h3>
+                            <p>Photograph from Personal Archive</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="center-btn">
+                <a href="photographs.html" class="btn primary-btn">View All Photographs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Suhas Roy</h3>
+                    <p>Creating timeless art that speaks to the soul</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="artworks.html">Artworks</a></li>
+                        <li><a href="exhibitions.html">Exhibitions</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Information</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Studio 42, Art District, Kolkata, India</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> contact@suhasroy.com</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Me</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Suhas Roy. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/media.js"></script>
+</body>
+</html> 

@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "title": "Transcending Boundaries",
+    "description": "A solo exhibition showcasing the artist's latest works that explore the intersection of traditional Indian art forms and contemporary global influences. This exhibition features a series of paintings that blend classical techniques with contemporary themes, creating a unique visual language that bridges the gap between tradition and modernity.",
+    "image": "images/exhibitions/exhibition1.jpg",
+    "date": "2024-05-15",
+    "endDate": "2024-06-30",
+    "location": "National Gallery of Modern Art, New Delhi",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Spiritual Resonance",
+    "description": "An immersive exhibition exploring the spiritual dimensions of Indian art through a collection of meditative and contemplative works. Visitors are invited to experience the tranquility and depth of these pieces, which draw inspiration from various spiritual traditions of India while expressing universal human emotions and experiences.",
+    "image": "images/exhibitions/exhibition2.jpg",
+    "date": "2024-08-10",
+    "endDate": "2024-09-15",
+    "location": "Jehangir Art Gallery, Mumbai",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "Colors of India",
+    "description": "A vibrant celebration of India's diverse cultural heritage through a kaleidoscope of colorful artworks inspired by different regions of the country. Each piece tells a story of regional traditions, festivals, and daily life, creating a rich tapestry that showcases the incredible diversity and unity of Indian culture.",
+    "image": "images/exhibitions/exhibition3.jpg",
+    "date": "2025-04-05",
+    "endDate": "2025-04-10",
+    "location": "Lalit Kala Akademi, Chennai",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "title": "Urban Narratives",
+    "description": "A thought-provoking exhibition examining the rapidly changing urban landscape of India and its impact on society and culture. Through a series of powerful visual narratives, the artist explores themes of urbanization, migration, identity, and the evolving relationship between people and their environments in modern India.",
+    "image": "images/exhibitions/exhibition4.jpg",
+    "date": "2025-03-10",
+    "endDate": "2025-03-20",
+    "location": "Kala Ghoda Arts Festival, Mumbai",
+    "featured": false
+  },
+  {
+    "id": 5,
+    "title": "Timeless Traditions",
+    "description": "An exhibition celebrating the enduring beauty and relevance of traditional Indian art forms, reimagined for contemporary audiences. This collection pays homage to classical techniques such as miniature painting, folk art, and temple art, while infusing them with fresh perspectives and modern sensibilities.",
+    "image": "images/exhibitions/exhibition5.jpg",
+    "date": "2023-07-12",
+    "endDate": "2023-08-10",
+    "location": "India Habitat Centre, New Delhi",
+    "featured": false
+  },
+  {
+    "id": 6,
+    "title": "Dialogues with Nature",
+    "description": "An exploration of humanity's relationship with the natural world, inspired by India's rich tradition of nature-centric art and philosophy. These works reflect on ecological themes, the beauty of landscapes, and the interconnectedness of all living beings, inviting viewers to contemplate their own relationship with the environment.",
+    "image": "images/exhibitions/exhibition6.jpg",
+    "date": "2024-09-15",
+    "endDate": "2024-10-15",
+    "location": "Jawahar Kala Kendra, Jaipur",
+    "featured": false
+  },
+  {
+    "id": 7,
+    "title": "Contemporary Visions",
+    "description": "A group exhibition featuring the artist alongside other prominent Indian contemporary artists, showcasing diverse perspectives on modern India. This collaborative showcase brings together multiple artistic voices to create a rich dialogue about identity, society, politics, and culture in 21st century India.",
+    "image": "images/exhibitions/exhibition7.jpg",
+    "date": "2023-11-20",
+    "endDate": "2023-12-10",
+    "location": "Kochi-Muziris Biennale, Kochi",
+    "featured": false
+  },
+  {
+    "id": 8,
+    "title": "Mythological Reimagined",
+    "description": "A creative reinterpretation of Indian mythology through a contemporary lens, exploring ancient stories and their relevance today. These works breathe new life into timeless narratives from the Ramayana, Mahabharata, and other mythological sources, finding parallels between ancient wisdom and contemporary challenges.",
+    "image": "images/exhibitions/exhibition8.jpg",
+    "date": "2024-02-05",
+    "endDate": "2024-03-01",
+    "location": "State Gallery of Art, Hyderabad",
+    "featured": false
+  },
+  {
+    "id": 9,
+    "title": "Echoes of the Past",
+    "description": "A retrospective exhibition showcasing the artist's evolution over three decades, highlighting key works from different periods and the development of distinctive artistic styles and themes. This journey through time reveals the consistent threads and surprising turns in a lifelong artistic exploration.",
+    "image": "images/exhibitions/exhibition9.jpg",
+    "date": "2022-06-10",
+    "endDate": "2022-07-30",
+    "location": "National Museum, New Delhi",
+    "featured": false
+  },
+  {
+    "id": 10,
+    "title": "Feminine Divine",
+    "description": "An exhibition celebrating the various manifestations of feminine energy in Indian art and culture, from goddesses to everyday women. These works honor the strength, grace, and resilience of women through powerful imagery that draws from both classical iconography and contemporary feminist perspectives.",
+    "image": "images/exhibitions/exhibition10.jpg",
+    "date": "2023-03-08",
+    "endDate": "2023-04-15",
+    "location": "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya, Mumbai",
+    "featured": false
+  },
+  {
+    "id": 11,
+    "title": "Crossroads: East Meets West",
+    "description": "An innovative exhibition exploring the intersection of Eastern and Western artistic traditions, showcasing works that bridge cultural divides and create new visual languages. This cross-cultural dialogue results in fascinating hybrid forms that challenge conventional categorizations and celebrate global artistic exchange.",
+    "image": "images/exhibitions/exhibition11.jpg",
+    "date": "2024-01-15",
+    "endDate": "2024-03-20",
+    "location": "Indira Gandhi National Centre for the Arts, New Delhi",
+    "featured": true
+  },
+  {
+    "id": 12,
+    "title": "Sacred Geometries",
+    "description": "A mesmerizing exploration of geometric patterns and mathematical principles in Indian art, from ancient temple architecture to contemporary abstract compositions. These works reveal the profound connection between mathematics, spirituality, and aesthetics in the Indian artistic tradition.",
+    "image": "images/exhibitions/exhibition12.jpg",
+    "date": "2024-04-05",
+    "endDate": "2024-05-25",
+    "location": "Museum of Sacred Art, Vrindavan",
+    "featured": false
+  },
+  {
+    "id": 13,
+    "title": "Rhythms of Light",
+    "description": "A current exhibition exploring the interplay of light, shadow, and color in creating dynamic visual rhythms. These works capture the ephemeral quality of light as it transforms landscapes, architecture, and human figures throughout the day, creating a sense of movement and temporal flow.",
+    "image": "images/exhibitions/exhibition13.jpg",
+    "date": "2024-03-01",
+    "endDate": "2024-05-30",
+    "location": "Birla Academy of Art & Culture, Kolkata",
+    "featured": true
+  },
+  {
+    "id": 14,
+    "title": "Textile Narratives",
+    "description": "A current exhibition celebrating India's rich textile heritage through paintings that incorporate textile patterns, techniques, and cultural stories. This innovative showcase bridges the gap between fine art and textile traditions, highlighting the artistic significance of India's fabric arts.",
+    "image": "images/exhibitions/exhibition14.jpg",
+    "date": "2024-02-15",
+    "endDate": "2024-05-15",
+    "location": "Crafts Museum, New Delhi",
+    "featured": false
+  },
+  {
+    "id": 15,
+    "title": "Urban Oasis",
+    "description": "A current exhibition featuring works that reimagine urban spaces as potential sanctuaries of peace and natural beauty. These paintings explore the possibility of harmonious coexistence between urban development and natural elements, offering a vision for more sustainable and humane cities.",
+    "image": "images/exhibitions/exhibition15.jpg",
+    "date": "2024-03-20",
+    "endDate": "2024-06-10",
+    "location": "Dr. Bhau Daji Lad Museum, Mumbai",
+    "featured": false
+  }
+] 

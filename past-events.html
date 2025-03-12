@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Events | Suhas Roy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="light-mode">
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Suhas Roy</a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="artworks.html">Available Artworks</a></li>
+                    <li><a href="exhibitions.html">Exhibitions</a></li>
+                    <li class="dropdown">
+                        <a href="events.html" class="active">Events</a>
+                        <div class="dropdown-content">
+                            <a href="current-events.html">Current Events</a>
+                            <a href="past-events.html" class="active">Past Events</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="media.html">Media</a>
+                        <div class="dropdown-content">
+                            <a href="publications.html">Publications</a>
+                            <a href="news.html">News</a>
+                            <a href="videos.html">Videos</a>
+                            <a href="photographs.html">Photographs</a>
+                        </div>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact Me</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Past Events</h1>
+            <p>Explore the history of events featuring Suhas Roy</p>
+        </div>
+    </section>
+
+    <!-- Events Filters Section -->
+    <section class="events-filters">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="category-filter">Category:</label>
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <!-- Categories will be populated dynamically -->
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="year-filter">Year:</label>
+                    <select id="year-filter">
+                        <option value="all">All Years</option>
+                        <!-- Years will be populated dynamically -->
+                    </select>
+                </div>
+                <div class="filter-group search-group">
+                    <input type="text" id="search-events" placeholder="Search events...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past Events Section -->
+    <section class="past-events">
+        <div class="container">
+            <div class="events-grid" id="past-events-grid">
+                <!-- Past events will be loaded here dynamically -->
+            </div>
+
+            <div class="no-results" id="no-results" style="display: none;">
+                <p>No events found matching your criteria.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Modal -->
+    <div class="event-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="event-modal-content">
+                <div class="event-modal-image">
+                    <img id="modal-event-image" src="" alt="Event">
+                </div>
+                <div class="event-modal-details">
+                    <h2 id="modal-event-title"></h2>
+                    <div class="event-info">
+                        <div class="info-item">
+                            <i class="far fa-calendar-alt"></i>
+                            <span id="modal-event-date"></span>
+                        </div>
+                        <div class="info-item">
+                            <i class="far fa-clock"></i>
+                            <span id="modal-event-time"></span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span id="modal-event-location"></span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-ticket-alt"></i>
+                            <span id="modal-event-ticket"></span>
+                        </div>
+                    </div>
+                    <div id="modal-event-description"></div>
+                    <div class="event-modal-actions">
+                        <button class="btn secondary-btn share-btn">Share <i class="fas fa-share-alt"></i></button>
+                        <button class="btn primary-btn gallery-btn">View Gallery <i class="fas fa-images"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Suhas Roy</h3>
+                    <p>Exploring the depths of human emotion through art.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="artworks.html">Artworks</a></li>
+                        <li><a href="exhibitions.html">Exhibitions</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-envelope"></i> info@suhasroy.com</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Santiniketan, West Bengal, India</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Me</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Suhas Roy. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/past-events.js"></script>
+</body>
+
+</html> 

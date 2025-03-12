@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suhas Roy | Renowned Indian Artist</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Suhas Roy</a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li ><a href="artworks.html">Available Artworks</a></li>
+                    <li><a href="exhibitions.html">Exhibitions</a></li>
+                    <li class="dropdown">
+                        <a href="events.html">Events</a>
+                        <div class="dropdown-content">
+                            <a href="current-events.html">Current Events</a>
+                            <a href="past-events.html">Past Events</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="media.html">Media</a>
+                        <div class="dropdown-content">
+                            <a href="publications.html">Publications</a>
+                            <a href="news.html">News</a>
+                            <a href="videos.html">Videos</a>
+                            <a href="photographs.html">Photographs</a>
+                        </div>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact Me</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="fade-in">Suhas Roy</h1>
+            <p class="fade-in">Exploring the depths of human emotion through art</p>
+            <a href="artworks.html" class="btn primary-btn fade-in">Explore Collection</a>
+        </div>
+        <div class="hero-image">
+            <img src="images/artist-portrait.jpg" alt="Suhas Roy - Indian Artist" class="parallax-img">
+        </div>
+    </section>
+
+    <!-- Featured Artworks Section -->
+    <section class="featured-artworks">
+        <div class="container">
+            <h2 class="section-title">Featured Artworks</h2>
+            <div class="artwork-grid" id="featured-artworks-container">
+                <!-- Artwork items will be loaded from JSON -->
+            </div>
+            <div class="center-btn">
+                <a href="artworks.html" class="btn secondary-btn">View All Artworks</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inquiry Form Modal -->
+    <div class="inquiry-modal" id="inquiry-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="inquiry-header">
+                    <h2>Inquire About This Artwork</h2>
+                    <div class="artwork-meta">
+                        <div class="meta-item">
+                            <strong>Artwork Code:</strong>
+                            <span id="inquiry-artwork-code"></span>
+                        </div>
+                    </div>
+                </div>
+                <form id="inquiry-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Preview Section -->
+    <section class="about-preview">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">About The Artist</h2>
+                <p>Suhas Roy is one of India's most celebrated contemporary artists, known for his evocative paintings that blend traditional Indian aesthetics with modern sensibilities. With over three decades of artistic journey, his work has been exhibited in prestigious galleries across the globe.</p>
+                <a href="about.html" class="btn text-btn">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="about-image">
+                <img src="images/artist-studio.jpg" alt="Suhas Roy in his studio">
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Exhibitions Section -->
+    <section class="upcoming-exhibitions">
+        <div class="container">
+            <h2 class="section-title">Upcoming Exhibitions</h2>
+            <div class="exhibition-slider" id="exhibitions-container">
+                <!-- Exhibition items will be loaded from JSON -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Art Lovers Say</h2>
+            <div class="testimonial-navigation">
+                <button class="testimonial-nav-btn prev-btn" aria-label="Previous testimonial">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="testimonial-slider" id="testimonials-container">
+                    <!-- Testimonial items will be loaded from JSON -->
+                </div>
+                <button class="testimonial-nav-btn next-btn" aria-label="Next testimonial">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Artists Section -->
+    <section class="other-artists">
+        <div class="container">
+            <h2 class="section-title">My Other Websites</h2>
+            <div class="artists-grid">
+                <!-- Hardcoded artist items -->
+                <div class="artist-item">
+                    <div class="artist-image">
+                        <img src="images/artists/artist1.jpg" alt="Contemporary Art Gallery">
+                    </div>
+                    <h3 class="artist-name">Contemporary Art Gallery</h3>
+                    <a href="https://www.contemporaryartgallery.com" class="artist-website" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                </div>
+                
+                <div class="artist-item">
+                    <div class="artist-image">
+                        <img src="images/artists/artist2.jpg" alt="Indian Art Heritage">
+                    </div>
+                    <h3 class="artist-name">Indian Art Heritage</h3>
+                    <a href="https://www.indianartheritage.org" class="artist-website" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                </div>
+                
+                <div class="artist-item">
+                    <div class="artist-image">
+                        <img src="images/artists/artist3.jpg" alt="Art Workshops Online">
+                    </div>
+                    <h3 class="artist-name">Art Workshops Online</h3>
+                    <a href="https://www.artworkshopsonline.com" class="artist-website" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                </div>
+                
+                <div class="artist-item">
+                    <div class="artist-image">
+                        <img src="images/artists/artist4.jpg" alt="Traditional Techniques">
+                    </div>
+                    <h3 class="artist-name">Traditional Techniques</h3>
+                    <a href="https://www.traditionaltechniques.art" class="artist-website" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                </div>
+                
+                <div class="artist-item">
+                    <div class="artist-image">
+                        <img src="images/artists/artist5.jpg" alt="Art Materials Shop">
+                    </div>
+                    <h3 class="artist-name">Art Materials Shop</h3>
+                    <a href="https://www.artmaterialsshop.com" class="artist-website" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Suhas Roy</h3>
+                    <p>Creating timeless art that speaks to the soul</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="artworks.html">Artworks</a></li>
+                        <li><a href="exhibitions.html">Exhibitions</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Information</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Studio 42, Art District, Kolkata, India</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> contact@suhasroy.com</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Me</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Suhas Roy. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Artwork Modal -->
+    <div class="artwork-modal" id="artwork-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-artwork-image" src="" alt="Artwork">
+                    <div class="image-controls">
+                        <button class="control-btn" id="zoom-out-btn" title="Zoom Out">
+                            <i class="fas fa-search-minus"></i>
+                        </button>
+                        <button class="control-btn" id="zoom-in-btn" title="Zoom In">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                        <button class="control-btn" id="fullscreen-btn" title="Toggle Fullscreen">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-details">
+                    <h2 id="modal-artwork-title"></h2>
+
+                    <div class="artwork-info-grid">
+                        <div class="artwork-info-item">
+                            <span class="info-label">Artist:</span>
+                            <span id="modal-artwork-artist">Suhas Roy</span>
+                        </div>
+                        <div class="artwork-info-item">
+                            <span class="info-label">Artwork Code:</span>
+                            <span id="modal-artwork-code"></span>
+                        </div>
+                        <div class="artwork-info-item">
+                            <span class="info-label">Year:</span>
+                            <span id="modal-artwork-year"></span>
+                        </div>
+                        <div class="artwork-info-item">
+                            <span class="info-label">Medium:</span>
+                            <span id="modal-artwork-medium"></span>
+                        </div>
+                        <div class="artwork-info-item">
+                            <span class="info-label">Dimensions:</span>
+                            <span id="modal-artwork-dimensions"></span>
+                        </div>
+                        <div class="artwork-info-item">
+                            <span class="info-label">Category:</span>
+                            <span id="modal-artwork-category"></span>
+                        </div>
+                    </div>
+
+                    <div class="artwork-price-container">
+                        <p class="artwork-price" id="modal-artwork-price"></p>
+                        <p class="artwork-availability" id="modal-artwork-availability"></p>
+                    </div>
+
+                    <div class="artwork-description-container">
+                        <h3>Description</h3>
+                        <div class="artwork-description" id="modal-artwork-description"></div>
+                    </div>
+
+                    <div class="artwork-actions">
+                        <button class="btn primary-btn" id="inquiry-btn">Inquire About This Artwork</button>
+                        <div class="share-dropdown">
+                            <button class="btn secondary-btn" id="share-artwork-btn">Share <i class="fas fa-share-alt"></i></button>
+                            <div class="share-options" id="share-options">
+                                <button class="share-option" id="copy-link-btn"><i class="fas fa-link"></i> Copy Link</button>
+                                <a class="share-option" id="share-facebook" href="#" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+                                <a class="share-option" id="share-twitter" href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+                                <a class="share-option" id="share-pinterest" href="#" target="_blank"><i class="fab fa-pinterest"></i> Pinterest</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="copy-success-message" class="copy-success-message">Link copied to clipboard!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html> 

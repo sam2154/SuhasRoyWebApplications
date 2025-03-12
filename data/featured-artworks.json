@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Eternal Harmony",
+    "description": "A mesmerizing blend of traditional Indian motifs with contemporary abstract elements, creating a visual symphony of colors and emotions.",
+    "image": "images/artworks/artwork1.jpg",
+    "category": "Abstract",
+    "medium": "Oil on Canvas",
+    "dimensions": "36 x 48 inches",
+    "year": 2023,
+    "price": 85000,
+    "available": true
+  },
+  {
+    "id": 2,
+    "title": "Mystic Whispers",
+    "description": "Inspired by ancient Indian mythology, this piece captures the ethereal conversation between the mortal and divine realms.",
+    "image": "images/artworks/artwork2.jpg",
+    "category": "Figurative",
+    "medium": "Acrylic on Canvas",
+    "dimensions": "30 x 40 inches",
+    "year": 2022,
+    "price": 65000,
+    "available": true
+  },
+  {
+    "id": 3,
+    "title": "Urban Reflections",
+    "description": "A poignant commentary on modern Indian urban life, blending chaotic cityscapes with moments of serene reflection.",
+    "image": "images/artworks/artwork3.jpg",
+    "category": "Contemporary",
+    "medium": "Mixed Media",
+    "dimensions": "48 x 60 inches",
+    "year": 2023,
+    "price": 120000,
+    "available": false
+  },
+  {
+    "id": 4,
+    "title": "Heritage Echoes",
+    "description": "A vibrant celebration of India's rich cultural heritage, depicted through a kaleidoscope of traditional symbols and modern interpretations.",
+    "image": "images/artworks/artwork4.jpg",
+    "category": "Traditional",
+    "medium": "Watercolor",
+    "dimensions": "24 x 36 inches",
+    "year": 2021,
+    "price": 45000,
+    "available": true
+  },
+  {
+    "id": 5,
+    "title": "Cosmic Dance",
+    "description": "Inspired by the divine dance of Lord Shiva, this artwork captures the rhythm of creation and destruction in the universe.",
+    "image": "images/artworks/artwork5.jpg",
+    "category": "Spiritual",
+    "medium": "Oil on Canvas",
+    "dimensions": "40 x 60 inches",
+    "year": 2022,
+    "price": 95000,
+    "available": true
+  },
+  {
+    "id": 6,
+    "title": "Silent Conversations",
+    "description": "A subtle exploration of human relationships and unspoken emotions, rendered in delicate brushstrokes and muted tones.",
+    "image": "images/artworks/artwork6.jpg",
+    "category": "Figurative",
+    "medium": "Acrylic on Canvas",
+    "dimensions": "36 x 36 inches",
+    "year": 2021,
+    "price": 55000,
+    "available": false
+  }
+] 

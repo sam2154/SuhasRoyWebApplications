@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Ananya Sharma",
+    "image": "images/artists/artist1.jpg",
+    "website": "https://www.ananyasharma-art.com"
+  },
+  {
+    "id": 2,
+    "name": "Vikram Patel",
+    "image": "images/artists/artist2.jpg",
+    "website": "https://www.vikrampatelart.com"
+  },
+  {
+    "id": 3,
+    "name": "Meera Krishnan",
+    "image": "images/artists/artist3.jpg",
+    "website": "https://www.meerakrishnan.com"
+  },
+  {
+    "id": 4,
+    "name": "Rajesh Verma",
+    "image": "images/artists/artist4.jpg",
+    "website": "https://www.rajeshverma-artist.com"
+  },
+  {
+    "id": 5,
+    "name": "Priya Nair",
+    "image": "images/artists/artist5.jpg",
+    "website": "https://www.priyanairart.com"
+  },
+  {
+    "id": 6,
+    "name": "Arjun Menon",
+    "image": "images/artists/artist6.jpg",
+    "website": "https://www.arjunmenonart.com"
+  }
+] 

@@ -1,0 +1,44 @@
+{
+    "faqs": [
+        {
+            "id": 1,
+            "question": "Do you accept commissioned artwork requests?",
+            "answer": "Yes, I accept commissioned artwork requests. Each piece is carefully discussed with the client to ensure their vision is brought to life. Please use the contact form above to discuss your requirements and timeline."
+        },
+        {
+            "id": 2,
+            "question": "What is your artwork pricing range?",
+            "answer": "Artwork prices vary depending on size, medium, and complexity. Small pieces typically start from ₹25,000, while larger works can range from ₹75,000 to ₹5,00,000. Please inquire about specific pieces for accurate pricing."
+        },
+        {
+            "id": 3,
+            "question": "How can I purchase your artwork?",
+            "answer": "You can purchase artwork through several methods: directly through the website, by visiting my studio, or through partner galleries. For website purchases, simply click the 'Inquire' button on any artwork page to begin the process."
+        },
+        {
+            "id": 4,
+            "question": "Do you ship artwork internationally?",
+            "answer": "Yes, I ship artwork worldwide. All pieces are professionally packed and insured for safe delivery. International shipping costs are calculated based on destination, size, and weight of the artwork."
+        },
+        {
+            "id": 5,
+            "question": "Can I visit your studio to view artwork in person?",
+            "answer": "Yes, studio visits are welcome by appointment. You can schedule a visit using the contact form above or by calling the studio directly. This gives you the opportunity to see the artwork in person and discuss any questions you may have."
+        },
+        {
+            "id": 6,
+            "question": "What is your return policy?",
+            "answer": "I offer a 14-day return policy for all artwork purchases. The artwork must be returned in its original condition and packaging. Please note that shipping costs for returns are the responsibility of the buyer unless the piece arrives damaged."
+        },
+        {
+            "id": 7,
+            "question": "Do you offer certificates of authenticity?",
+            "answer": "Yes, all original artworks come with a signed certificate of authenticity. This document includes details about the artwork, its creation date, medium, and a unique identification number."
+        },
+        {
+            "id": 8,
+            "question": "How do you handle artwork maintenance and care?",
+            "answer": "Each artwork comes with specific care instructions. Generally, artwork should be kept away from direct sunlight and areas of high humidity. I also offer consultation on framing and display options to ensure optimal preservation of the piece."
+        }
+    ]
+} 
