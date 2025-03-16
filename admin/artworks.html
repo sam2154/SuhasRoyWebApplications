@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artwork Management | Suhas Roy Admin</title>
+    <link rel="stylesheet" href="css/admin-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">Admin Portal</div>
+            <button class="toggle-sidebar" aria-label="Toggle Sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="menu-item">
+                <a href="index.html" class="menu-link">
+                    <span class="menu-icon"><i class="fas fa-tachometer-alt"></i></span>
+                    <span class="menu-text">Dashboard</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="artworks.html" class="menu-link active">
+                    <span class="menu-icon"><i class="fas fa-palette"></i></span>
+                    <span class="menu-text">Artworks</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="events.html" class="menu-link">
+                    <span class="menu-icon"><i class="fas fa-calendar-alt"></i></span>
+                    <span class="menu-text">Events</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="media.html" class="menu-link">
+                    <span class="menu-icon"><i class="fas fa-photo-video"></i></span>
+                    <span class="menu-text">Media</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="inquiries.html" class="menu-link">
+                    <span class="menu-icon"><i class="fas fa-envelope"></i></span>
+                    <span class="menu-text">Inquiries</span>
+                </a>
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+            <ul class="footer-menu">
+                <li class="menu-item">
+                    <a href="settings.html" class="menu-link">
+                        <span class="menu-icon"><i class="fas fa-cog"></i></span>
+                        <span class="menu-text">Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay"></div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <h1 class="page-title">Artworks</h1>
+        </div>
+        <div class="header-center">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Search artworks..." id="global-search">
+                <button type="button" onclick="searchItems(document.getElementById('global-search').value, 'artworks')">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="header-actions">
+            <button class="header-action" title="Notifications">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">3</span>
+            </button>
+            <button class="theme-toggle" title="Toggle Theme">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+            <div class="admin-info">
+                <div class="admin-details">
+                    <div class="admin-name">Admin User</div>
+                    <div class="admin-role">Administrator</div>
+                </div>
+                <div class="admin-avatar">
+                    <img src="../images/admin-avatar.jpg" alt="Admin">
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="dashboard">
+            <!-- Stats Overview -->
+            <div class="stats-grid mb-3">
+                <div class="stat-card">
+                    <div class="stat-icon artwork-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>156</h3>
+                        <p>Total Artworks</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon event-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>₹2.4M</h3>
+                        <p>Total Sales</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon inquiry-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>45</h3>
+                        <p>Available</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon media-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>89%</h3>
+                        <p>Engagement</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Bar -->
+            <div class="d-flex justify-between align-center mb-3">
+                <div class="action-buttons">
+                    <button class="btn primary-btn" onclick="openModal('add-artwork-modal')">
+                        <i class="fas fa-plus"></i> Add New Artwork
+                    </button>
+                    <button class="btn secondary-btn ml-2">
+                        <i class="fas fa-file-export"></i> Export
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Filters -->
+            <div class="filters mb-3">
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label for="category-filter">Category</label>
+                        <select id="category-filter" class="form-control">
+                            <option value="">All Categories</option>
+                            <option value="Abstract">Abstract</option>
+                            <option value="Figurative">Figurative</option>
+                            <option value="Contemporary">Contemporary</option>
+                            <option value="Traditional">Traditional</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="medium-filter">Medium</label>
+                        <select id="medium-filter" class="form-control">
+                            <option value="">All Mediums</option>
+                            <option value="Oil">Oil on Canvas</option>
+                            <option value="Acrylic">Acrylic on Canvas</option>
+                            <option value="Watercolor">Watercolor</option>
+                            <option value="Mixed">Mixed Media</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="price-range">Price Range</label>
+                        <select id="price-range" class="form-control">
+                            <option value="">All Prices</option>
+                            <option value="0-50000">Under ₹50,000</option>
+                            <option value="50000-100000">₹50,000 - ₹1,00,000</option>
+                            <option value="100000-500000">₹1,00,000 - ₹5,00,000</option>
+                            <option value="500000+">Above ₹5,00,000</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="availability">Availability</label>
+                        <select id="availability" class="form-control">
+                            <option value="">All Status</option>
+                            <option value="available">Available</option>
+                            <option value="sold">Sold</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-actions mt-2">
+                    <button class="btn secondary-btn" onclick="applyFilters()">
+                        <i class="fas fa-filter"></i> Apply Filters
+                    </button>
+                    <button class="btn text-btn ml-2" onclick="resetFilters()">
+                        <i class="fas fa-undo"></i> Reset
+                    </button>
+                </div>
+            </div>
+
+            <!-- Artwork Grid View -->
+            <div class="artwork-grid active" id="grid-view">
+                <!-- Sample Artwork Cards -->
+                <div class="artwork-card">
+                    <div class="artwork-image">
+                        <img src="../images/artworks/artwork1.jpg" alt="Abstract Harmony">
+                        <span class="status-badge status-available">Available</span>
+                    </div>
+                    <div class="artwork-details">
+                        <h3 class="artwork-title">Abstract Harmony</h3>
+                        <div class="artwork-meta">
+                            <span><i class="fas fa-paint-brush"></i> Oil on Canvas</span>
+                            <span><i class="fas fa-ruler-combined"></i> 36" x 48"</span>
+                        </div>
+                        <div class="artwork-price">₹75,000</div>
+                        <div class="artwork-actions">
+                            <button class="btn outline-btn-sm" onclick="editArtwork(1)">
+                                <i class="fas fa-edit"></i> Edit
+                            </button>
+                            <button class="btn danger-btn-sm" onclick="deleteArtwork(1)">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More artwork cards... -->
+            </div>
+
+            <!-- Artwork List View -->
+            <div class="table-responsive" id="list-view" style="display: none;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Medium</th>
+                            <th>Dimensions</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img src="../images/artworks/artwork1.jpg" alt="Abstract Harmony" style="width: 50px; height: 50px; object-fit: cover;">
+                            </td>
+                            <td>Abstract Harmony</td>
+                            <td>Abstract</td>
+                            <td>Oil on Canvas</td>
+                            <td>36" x 48"</td>
+                            <td>₹75,000</td>
+                            <td><span class="status-badge status-available">Available</span></td>
+                            <td>
+                                <div class="table-actions">
+                                    <button class="btn outline-btn-sm" onclick="editArtwork(1)">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn danger-btn-sm" onclick="deleteArtwork(1)">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination mt-3">
+                <button class="pagination-item" onclick="changePage(1)">
+                    <i class="fas fa-angle-double-left"></i>
+                </button>
+                <button class="pagination-item" onclick="changePage(currentPage - 1)">
+                    <i class="fas fa-angle-left"></i>
+                </button>
+                <button class="pagination-item active">1</button>
+                <button class="pagination-item">2</button>
+                <button class="pagination-item">3</button>
+                <button class="pagination-item" onclick="changePage(currentPage + 1)">
+                    <i class="fas fa-angle-right"></i>
+                </button>
+                <button class="pagination-item" onclick="changePage(totalPages)">
+                    <i class="fas fa-angle-double-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Artwork Modal -->
+    <div class="modal-backdrop" id="artwork-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title"><i class="fas fa-palette"></i> <span id="modal-action">Add</span> Artwork</h2>
+                <button class="close-modal" onclick="closeModal('artwork-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="artwork-form">
+                    <div class="form-row">
+                        <div class="form-group form-col">
+                            <label for="artwork-title">Title</label>
+                            <input type="text" id="artwork-title" class="form-control" required>
+                        </div>
+                        <div class="form-group form-col">
+                            <label for="artwork-category">Category</label>
+                            <select id="artwork-category" class="form-control" required>
+                                <option value="">Select Category</option>
+                                <option value="Abstract">Abstract</option>
+                                <option value="Figurative">Figurative</option>
+                                <option value="Contemporary">Contemporary</option>
+                                <option value="Traditional">Traditional</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group form-col">
+                            <label for="artwork-medium">Medium</label>
+                            <select id="artwork-medium" class="form-control" required>
+                                <option value="">Select Medium</option>
+                                <option value="Oil">Oil on Canvas</option>
+                                <option value="Acrylic">Acrylic on Canvas</option>
+                                <option value="Watercolor">Watercolor</option>
+                                <option value="Mixed">Mixed Media</option>
+                            </select>
+                        </div>
+                        <div class="form-group form-col">
+                            <label for="artwork-dimensions">Dimensions</label>
+                            <input type="text" id="artwork-dimensions" class="form-control" placeholder="e.g. 36 x 48 inches" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group form-col">
+                            <label for="artwork-price">Price (₹)</label>
+                            <input type="number" id="artwork-price" class="form-control" min="0" required>
+                        </div>
+                        <div class="form-group form-col">
+                            <label for="artwork-status">Status</label>
+                            <select id="artwork-status" class="form-control" required>
+                                <option value="available">Available</option>
+                                <option value="sold">Sold</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="artwork-description">Description</label>
+                        <textarea id="artwork-description" class="form-control" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Artwork Image</label>
+                        <div class="file-upload">
+                            <input type="file" id="artwork-image" accept="image/*" class="hidden">
+                            <div class="upload-area" onclick="document.getElementById('artwork-image').click()">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Click to upload or drag and drop</p>
+                                <span>Supported formats: JPG, PNG (max. 5MB)</span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn secondary-btn" onclick="closeModal('artwork-modal')">Cancel</button>
+                <button class="btn primary-btn" onclick="saveArtwork()">Save Artwork</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="js/admin.js"></script>
+    <script>
+        let currentPage = 1;
+        let totalPages = 3;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set grid view as default and only view
+            document.getElementById('grid-view').classList.add('active');
+            document.getElementById('grid-view').style.display = 'grid';
+            document.getElementById('list-view').style.display = 'none';
+            
+            // Initialize other event listeners
+            initializeEventListeners();
+        });
+
+        function initializeEventListeners() {
+            // File upload preview
+            const artworkImage = document.getElementById('artwork-image');
+            const uploadArea = document.querySelector('.upload-area');
+            
+            if (artworkImage && uploadArea) {
+                artworkImage.addEventListener('change', function() {
+                    if (this.files && this.files[0]) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            uploadArea.style.backgroundImage = `url(${e.target.result})`;
+                            uploadArea.classList.add('has-image');
+                        };
+                        reader.readAsDataURL(this.files[0]);
+                    }
+                });
+
+                // Drag and drop
+                uploadArea.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    uploadArea.classList.add('dragover');
+                });
+
+                uploadArea.addEventListener('dragleave', () => {
+                    uploadArea.classList.remove('dragover');
+                });
+
+                uploadArea.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    uploadArea.classList.remove('dragover');
+                    
+                    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+                        artworkImage.files = e.dataTransfer.files;
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            uploadArea.style.backgroundImage = `url(${e.target.result})`;
+                            uploadArea.classList.add('has-image');
+                        };
+                        reader.readAsDataURL(e.dataTransfer.files[0]);
+                    }
+                });
+            }
+        }
+
+        function openModal(modalId, action = 'Add') {
+            document.getElementById(modalId).classList.add('active');
+            document.getElementById('modal-action').textContent = action;
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.getElementById('artwork-form').reset();
+            document.querySelector('.upload-area').style.backgroundImage = 'none';
+            document.querySelector('.upload-area').classList.remove('has-image');
+        }
+
+        function applyFilters() {
+            // Implement filter logic
+            showToast('Success', 'Filters applied successfully', 'success');
+            loadArtworks();
+        }
+
+        function resetFilters() {
+            document.querySelectorAll('.filters select').forEach(select => {
+                select.value = '';
+            });
+            showToast('Success', 'Filters reset successfully', 'success');
+            loadArtworks();
+        }
+
+        function changePage(page) {
+            if (page < 1 || page > totalPages) return;
+            
+            currentPage = page;
+            loadArtworks();
+            
+            // Update active pagination item
+            document.querySelectorAll('.pagination-item').forEach((item, index) => {
+                if (index > 0 && index < 6) {
+                    item.classList.toggle('active', index === currentPage);
+                }
+            });
+        }
+
+        function editArtwork(id) {
+            openModal('artwork-modal', 'Edit');
+            // Load artwork data
+            // This would typically fetch the artwork data from the server
+        }
+
+        function deleteArtwork(id) {
+            if (confirm('Are you sure you want to delete this artwork?')) {
+                // Implement delete logic
+                showToast('Success', 'Artwork deleted successfully', 'success');
+                loadArtworks();
+            }
+        }
+
+        function saveArtwork() {
+            // Implement save logic
+            showToast('Success', 'Artwork saved successfully', 'success');
+            closeModal('artwork-modal');
+            loadArtworks();
+        }
+
+        function loadArtworks() {
+            // This would typically fetch artworks from the server
+            // For now, we'll just show a success message
+            showToast('Info', 'Loading artworks...', 'info');
+        }
+
+        function showToast(title, message, type = 'info') {
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            toast.innerHTML = `
+                <i class="toast-icon fas fa-${type === 'success' ? 'check-circle' : type === 'warning' ? 'exclamation-triangle' : type === 'error' ? 'times-circle' : 'info-circle'}"></i>
+                <div class="toast-content">
+                    <div class="toast-title">${title}</div>
+                    <div class="toast-message">${message}</div>
+                </div>
+                <button class="toast-close" onclick="this.parentElement.remove()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="toast-progress"></div>
+            `;
+            
+            document.querySelector('.toast-container').appendChild(toast);
+            
+            // Auto remove toast after 3 seconds
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+    </script>
+</body>
+</html> 

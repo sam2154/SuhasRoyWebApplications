@@ -1,0 +1,25 @@
+{
+  "theme": "light",
+  "sidebarCollapsed": false,
+  "notificationsEnabled": true,
+  "autoSave": true,
+  "profile": {
+    "name": "Admin User",
+    "email": "admin@suhasroy.com",
+    "avatar": "images/admin-avatar.jpg",
+    "role": "Administrator",
+    "lastLogin": "2024-03-13T09:30:00"
+  },
+  "dashboardWidgets": {
+    "artworkStats": true,
+    "recentInquiries": true,
+    "upcomingEvents": true,
+    "mediaStats": true
+  },
+  "customization": {
+    "primaryColor": "#8B4513",
+    "accentColor": "#CD853F",
+    "fontFamily": "Poppins, sans-serif",
+    "headerStyle": "fixed"
+  }
+} 

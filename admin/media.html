@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Management | Suhas Roy Admin</title>
+    <link rel="stylesheet" href="css/admin-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">Admin Portal</div>
+            <button class="toggle-sidebar" aria-label="Toggle Sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="menu-item">
+                <a href="index.html" class="menu-link">
+                    <span class="menu-icon"><i class="fas fa-tachometer-alt"></i></span>
+                    <span class="menu-text">Dashboard</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="artworks.html" class="menu-link">
+                    <span class="menu-icon"><i class="fas fa-palette"></i></span>
+                    <span class="menu-text">Artworks</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="events.html" class="menu-link">
+                    <span class="menu-icon"><i class="fas fa-calendar-alt"></i></span>
+                    <span class="menu-text">Events</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="media.html" class="menu-link active">
+                    <span class="menu-icon"><i class="fas fa-photo-video"></i></span>
+                    <span class="menu-text">Media</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="inquiries.html" class="menu-link">
+                    <span class="menu-icon"><i class="fas fa-envelope"></i></span>
+                    <span class="menu-text">Inquiries</span>
+                </a>
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+            <ul class="footer-menu">
+            <li class="menu-item">
+                <a href="settings.html" class="menu-link">
+                    <span class="menu-icon"><i class="fas fa-cog"></i></span>
+                    <span class="menu-text">Settings</span>
+                </a>
+            </li>
+        </ul>
+        </div>
+    </div>
+    
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay"></div>
+    
+        <!-- Header -->
+        <header class="header">
+        <div class="header-left">
+            <h1 class="page-title">Media</h1>
+        </div>
+            <div class="header-center">
+                <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Search media..." id="global-search">
+                <button type="button" onclick="searchItems(document.getElementById('global-search').value, 'media')">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="header-action" title="Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="theme-toggle" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            <div class="admin-info">
+                <div class="admin-details">
+                    <div class="admin-name">Admin User</div>
+                    <div class="admin-role">Administrator</div>
+                </div>
+                <div class="admin-avatar">
+                    <img src="../images/admin-avatar.jpg" alt="Admin">
+                </div>
+                </div>
+            </div>
+        </header>
+        
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Media Content -->
+        <div class="dashboard">
+            <!-- Stats Overview -->
+            <div class="stats-grid mb-3">
+                <div class="stat-card">
+                    <div class="stat-icon media-icon">
+                        <i class="fas fa-images"></i>
+                </div>
+                    <div class="stat-info">
+                        <h3>2.4K</h3>
+                        <p>Total Media</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon artwork-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>15.6K</h3>
+                        <p>Total Views</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon event-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>45 GB</h3>
+                        <p>Storage Used</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon inquiry-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>2.8K</h3>
+                        <p>Total Shares</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Bar -->
+            <div class="d-flex justify-between align-center mb-3">
+                <div class="action-buttons">
+                    <button class="btn primary-btn" onclick="openModal('media-modal')">
+                        <i class="fas fa-plus"></i> Upload Media
+                </button>
+                    <button class="btn secondary-btn ml-2">
+                        <i class="fas fa-file-export"></i> Export
+                </button>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters mb-3">
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label for="media-type">Media Type</label>
+                        <select id="media-type" class="form-control">
+                            <option value="">All Types</option>
+                            <option value="image">Images</option>
+                            <option value="video">Videos</option>
+                            <option value="document">Documents</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="date-range">Date Range</label>
+                        <select id="date-range" class="form-control">
+                            <option value="">All Time</option>
+                            <option value="today">Today</option>
+                            <option value="week">This Week</option>
+                            <option value="month">This Month</option>
+                            <option value="year">This Year</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="category">Category</label>
+                        <select id="category" class="form-control">
+                            <option value="">All Categories</option>
+                            <option value="artwork">Artwork</option>
+                            <option value="event">Event</option>
+                            <option value="press">Press</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="sort-by">Sort By</label>
+                        <select id="sort-by" class="form-control">
+                            <option value="date-desc">Newest First</option>
+                            <option value="date-asc">Oldest First</option>
+                            <option value="name-asc">Name A-Z</option>
+                            <option value="name-desc">Name Z-A</option>
+                            <option value="size">Size</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-actions mt-2">
+                    <button class="btn secondary-btn" onclick="applyFilters()">
+                        <i class="fas fa-filter"></i> Apply Filters
+                                    </button>
+                    <button class="btn text-btn ml-2" onclick="resetFilters()">
+                        <i class="fas fa-undo"></i> Reset
+                                    </button>
+                        </div>
+                    </div>
+
+            <!-- Media Table -->
+            <div class="table-responsive">
+                <table class="data-table">
+                        <thead>
+                            <tr>
+                            <th>Media</th>
+                                <th>Type</th>
+                                <th>Size</th>
+                            <th>Uploaded</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                    <tbody id="media-table-body">
+                        <!-- Media rows will be populated dynamically -->
+                    </tbody>
+                </table>
+                                    </div>
+
+            <!-- Pagination -->
+            <div class="pagination mt-3">
+                <button class="pagination-item" onclick="changePage(1)">
+                    <i class="fas fa-angle-double-left"></i>
+                                        </button>
+                <button class="pagination-item" onclick="changePage(currentPage - 1)">
+                    <i class="fas fa-angle-left"></i>
+                                        </button>
+                <button class="pagination-item active">1</button>
+                <button class="pagination-item">2</button>
+                <button class="pagination-item">3</button>
+                <button class="pagination-item" onclick="changePage(currentPage + 1)">
+                    <i class="fas fa-angle-right"></i>
+                </button>
+                <button class="pagination-item" onclick="changePage(totalPages)">
+                    <i class="fas fa-angle-double-right"></i>
+                                        </button>
+                                    </div>
+                </div>
+            </div>
+
+            <!-- Upload Media Modal -->
+    <div class="modal-backdrop" id="media-modal">
+        <div class="modal">
+                    <div class="modal-header">
+                <h2 class="modal-title"><i class="fas fa-cloud-upload-alt"></i> <span id="modal-action">Upload</span> Media</h2>
+                <button class="close-modal" onclick="closeModal('media-modal')">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                <form id="media-form">
+                    <div class="form-group">
+                        <label>Upload Files</label>
+                        <div class="file-upload">
+                            <input type="file" id="media-files" accept="image/*,video/*,application/pdf" multiple class="hidden">
+                            <div class="upload-area" onclick="document.getElementById('media-files').click()">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Click to upload or drag and drop</p>
+                                <span>Supported formats: JPG, PNG, MP4, PDF (max. 50MB)</span>
+                            </div>
+                                </div>
+                            </div>
+                    <div class="form-row">
+                        <div class="form-group form-col">
+                            <label for="media-category">Category</label>
+                            <select id="media-category" class="form-control" required>
+                                <option value="">Select Category</option>
+                                <option value="artwork">Artwork</option>
+                                <option value="event">Event</option>
+                                    <option value="press">Press</option>
+                                <option value="other">Other</option>
+                                </select>
+                            </div>
+                        <div class="form-group form-col">
+                            <label for="media-tags">Tags</label>
+                            <input type="text" id="media-tags" class="form-control" placeholder="Enter tags separated by commas">
+                                    </div>
+                            </div>
+                    <div class="form-group">
+                        <label for="media-description">Description</label>
+                        <textarea id="media-description" class="form-control" rows="4"></textarea>
+                        </div>
+                </form>
+                    </div>
+                    <div class="modal-footer">
+                <button class="btn secondary-btn" onclick="closeModal('media-modal')">Cancel</button>
+                <button class="btn primary-btn" onclick="uploadMedia()">Upload</button>
+                    </div>
+                </div>
+            </div>
+
+    <!-- Media Preview Modal -->
+    <div class="modal-backdrop" id="preview-modal">
+        <div class="modal modal-large">
+                    <div class="modal-header">
+                <h2 class="modal-title"><i class="fas fa-eye"></i> Media Preview</h2>
+                        <button class="close-modal" onclick="closeModal('preview-modal')">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+            <div class="modal-body">
+                        <div class="preview-container">
+                    <div class="preview-content">
+                        <div class="preview-main">
+                            <!-- Preview image/video will be loaded here -->
+                        </div>
+                        <div class="preview-info">
+                            <div class="preview-header">
+                                <h3 class="preview-title"></h3>
+                                <span class="preview-type"></span>
+                    </div>
+                            <div class="preview-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Size:</span>
+                                    <span class="detail-value size"></span>
+                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Uploaded:</span>
+                                    <span class="detail-value date"></span>
+            </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Category:</span>
+                                    <span class="detail-value category"></span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Tags:</span>
+                                    <span class="detail-value tags"></span>
+                                </div>
+                            </div>
+                            <div class="preview-description"></div>
+                            <div class="preview-actions">
+                                <button class="btn primary-btn" onclick="editMedia(currentPreviewId)">
+                                    <i class="fas fa-edit"></i> Edit
+                                </button>
+                                <button class="btn secondary-btn" onclick="downloadMedia(currentPreviewId)">
+                                    <i class="fas fa-download"></i> Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="js/admin.js"></script>
+    <script>
+        let currentPage = 1;
+        let totalPages = 3;
+        let currentView = 'grid';
+        let currentPreviewId = null;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // View switching
+            const viewButtons = document.querySelectorAll('.view-btn');
+            const gridView = document.getElementById('grid-view');
+            const listView = document.getElementById('list-view');
+
+            viewButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const view = button.dataset.view;
+                    currentView = view;
+                    
+                    // Update active button
+                    viewButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    // Show active view
+                    if (view === 'grid') {
+                        gridView.style.display = 'grid';
+                        listView.style.display = 'none';
+                    } else {
+                        gridView.style.display = 'none';
+                        listView.style.display = 'block';
+                    }
+                });
+            });
+
+            // File upload preview
+            const mediaFiles = document.getElementById('media-files');
+            const uploadArea = document.querySelector('.upload-area');
+            
+            if (mediaFiles && uploadArea) {
+                mediaFiles.addEventListener('change', handleFileSelect);
+
+                // Drag and drop
+                uploadArea.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    uploadArea.classList.add('dragover');
+                });
+
+                uploadArea.addEventListener('dragleave', () => {
+                    uploadArea.classList.remove('dragover');
+                });
+
+                uploadArea.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    uploadArea.classList.remove('dragover');
+                    
+                    if (e.dataTransfer.files.length > 0) {
+                        mediaFiles.files = e.dataTransfer.files;
+                        handleFileSelect({ target: mediaFiles });
+                    }
+                });
+            }
+        });
+
+        function handleFileSelect(event) {
+            const files = event.target.files;
+            const uploadArea = document.querySelector('.upload-area');
+            
+            if (files.length > 0) {
+                uploadArea.innerHTML = `
+                    <div class="selected-files">
+                        <div class="file-count">${files.length} file(s) selected</div>
+                        <div class="file-list">
+                            ${Array.from(files).map(file => `
+                                <div class="selected-file">
+                                    <i class="fas fa-${getFileIcon(file.type)}"></i>
+                                    <span>${file.name}</span>
+                                    <span class="file-size">${formatFileSize(file.size)}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+                uploadArea.classList.add('has-files');
+            }
+        }
+
+        function getFileIcon(type) {
+            if (type.startsWith('image/')) return 'image';
+            if (type.startsWith('video/')) return 'video';
+            if (type.startsWith('application/pdf')) return 'file-pdf';
+            return 'file';
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        function openModal(modalId, action = 'Upload') {
+            document.getElementById(modalId).classList.add('active');
+            if (modalId === 'media-modal') {
+                document.getElementById('modal-action').textContent = action;
+            }
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            if (modalId === 'media-modal') {
+                document.getElementById('media-form').reset();
+                const uploadArea = document.querySelector('.upload-area');
+                uploadArea.innerHTML = `
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Click to upload or drag and drop</p>
+                    <span>Supported formats: JPG, PNG, MP4, PDF (max. 50MB)</span>
+                `;
+                uploadArea.classList.remove('has-files');
+            }
+        }
+
+        function applyFilters() {
+            showToast('Success', 'Filters applied successfully', 'success');
+            loadMedia();
+        }
+
+        function resetFilters() {
+            document.querySelectorAll('.filters select').forEach(select => {
+                select.value = '';
+            });
+            showToast('Success', 'Filters reset successfully', 'success');
+            loadMedia();
+        }
+
+        function previewMedia(id) {
+            currentPreviewId = id;
+            openModal('preview-modal');
+            
+            // Sample data - replace with actual API call
+            const mediaItem = {
+                id: id,
+                name: 'Sample Media Title',
+                type: 'image',
+                size: '2.4 MB',
+                format: 'JPG',
+                uploadDate: '2024-03-15',
+                category: 'Artwork',
+                tags: 'art, digital, preview',
+                description: 'This is a sample description of the media item. It provides details about the content and its purpose.',
+                thumbnail: '../images/media/artwork1.jpg'
+            };
+
+            const previewMain = document.querySelector('.preview-main');
+            const previewTitle = document.querySelector('.preview-title');
+            const previewType = document.querySelector('.preview-type');
+            const previewSize = document.querySelector('.detail-value.size');
+            const previewDate = document.querySelector('.detail-value.date');
+            const previewCategory = document.querySelector('.detail-value.category');
+            const previewTags = document.querySelector('.detail-value.tags');
+            const previewDescription = document.querySelector('.preview-description');
+
+            // Update preview content
+            if (mediaItem.type === 'image') {
+                previewMain.innerHTML = `<img src="${mediaItem.thumbnail}" alt="${mediaItem.name}">`;
+            } else if (mediaItem.type === 'video') {
+                previewMain.innerHTML = `<video src="${mediaItem.thumbnail}" controls></video>`;
+            } else {
+                previewMain.innerHTML = `<i class="fas fa-file-alt fa-4x"></i>`;
+            }
+
+            // Update preview details
+            previewTitle.textContent = mediaItem.name;
+            previewType.textContent = mediaItem.type.charAt(0).toUpperCase() + mediaItem.type.slice(1);
+            previewType.className = `preview-type media-type-badge ${mediaItem.type}`;
+            previewSize.textContent = mediaItem.size;
+            previewDate.textContent = new Date(mediaItem.uploadDate).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            previewCategory.textContent = mediaItem.category;
+            previewTags.textContent = mediaItem.tags;
+            previewDescription.textContent = mediaItem.description;
+        }
+
+        function downloadMedia(id) {
+            showToast('Success', 'Download started', 'success');
+        }
+
+        function deleteMedia(id) {
+            if (confirm('Are you sure you want to delete this media?')) {
+                showToast('Success', 'Media deleted successfully', 'success');
+                loadMedia();
+            }
+        }
+
+        function uploadMedia() {
+            showToast('Success', 'Media uploaded successfully', 'success');
+            closeModal('media-modal');
+            loadMedia();
+        }
+
+        function loadMedia() {
+            showToast('Info', 'Loading media...', 'info');
+        }
+
+        function changePage(page) {
+            if (page < 1 || page > totalPages) return;
+            
+            currentPage = page;
+            loadMedia();
+            
+            // Update active pagination item
+            document.querySelectorAll('.pagination-item').forEach((item, index) => {
+                if (index > 0 && index < 6) {
+                    item.classList.toggle('active', index === currentPage);
+                }
+            });
+        }
+
+        function showToast(title, message, type = 'info') {
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            toast.innerHTML = `
+                <i class="toast-icon fas fa-${type === 'success' ? 'check-circle' : type === 'warning' ? 'exclamation-triangle' : type === 'error' ? 'times-circle' : 'info-circle'}"></i>
+                <div class="toast-content">
+                    <div class="toast-title">${title}</div>
+                    <div class="toast-message">${message}</div>
+                </div>
+                <button class="toast-close" onclick="this.parentElement.remove()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="toast-progress"></div>
+            `;
+            
+            document.querySelector('.toast-container').appendChild(toast);
+            
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+
+        function loadMediaItems(page = 1) {
+            // Sample media data - replace with actual API call
+            const mediaItems = [
+                {
+                    id: 1,
+                    name: 'Artwork Preview 1',
+                    type: 'image',
+                    size: '2.4 MB',
+                    format: 'JPG',
+                    uploadDate: '2024-03-15',
+                    thumbnail: '../images/media/artwork1.jpg'
+                },
+                {
+                    id: 2,
+                    name: 'Event Video',
+                    type: 'video',
+                    size: '15.8 MB',
+                    format: 'MP4',
+                    uploadDate: '2024-03-14',
+                    thumbnail: '../images/media/video1.jpg'
+                },
+                {
+                    id: 3,
+                    name: 'Press Release',
+                    type: 'document',
+                    size: '856 KB',
+                    format: 'PDF',
+                    uploadDate: '2024-03-13',
+                    thumbnail: null
+                }
+            ];
+
+            const tableBody = document.getElementById('media-table-body');
+            tableBody.innerHTML = mediaItems.map(item => `
+                <tr>
+                    <td>
+                        <div class="media-info">
+                            <div class="media-thumbnail">
+                                ${item.thumbnail ? 
+                                    `<img src="${item.thumbnail}" alt="${item.name}">` :
+                                    `<i class="fas fa-${item.type === 'document' ? 'file-alt' : item.type}"></i>`
+                                }
+                            </div>
+                            <div class="media-details">
+                                <h4>${item.name}</h4>
+                                <p>${item.format}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="media-type-badge ${item.type}">
+                            <i class="fas fa-${item.type === 'document' ? 'file-alt' : item.type}"></i>
+                            ${item.type.charAt(0).toUpperCase() + item.type.slice(1)}
+                        </span>
+                    </td>
+                    <td>
+                        <span class="media-size">${item.size}</span>
+                    </td>
+                    <td>
+                        <span class="media-date">${new Date(item.uploadDate).toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        })}</span>
+                    </td>
+                    <td>
+                        <div class="table-actions">
+                            <button class="btn" onclick="previewMedia(${item.id})" title="Preview">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn" onclick="editMedia(${item.id})" title="Edit">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn" onclick="downloadMedia(${item.id})" title="Download">
+                                <i class="fas fa-download"></i>
+                            </button>
+                            <button class="btn" onclick="deleteMedia(${item.id})" title="Delete">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+
+            // Update pagination
+            updatePagination(page, Math.ceil(mediaItems.length / 10));
+        }
+
+        function editMedia(id) {
+            closeModal('preview-modal');
+            openModal('media-modal', 'Edit');
+            
+            // Sample data - replace with actual API call
+            const mediaItem = {
+                id: id,
+                name: 'Sample Media',
+                category: 'artwork',
+                tags: 'art, digital',
+                description: 'Sample description',
+                thumbnail: '../images/media/artwork1.jpg'
+            };
+            
+            // Update modal content for edit mode
+            const modalBody = document.querySelector('#media-modal .modal-body');
+            modalBody.innerHTML = `
+                <form id="media-form" class="edit-form">
+                    <div class="media-preview-section">
+                        <div class="preview-header">
+                            <h3>Current Media</h3>
+                            <span class="media-type-badge ${mediaItem.type || 'image'}">
+                                <i class="fas fa-${mediaItem.type === 'document' ? 'file-alt' : mediaItem.type || 'image'}"></i>
+                                ${(mediaItem.type || 'Image').charAt(0).toUpperCase() + (mediaItem.type || 'image').slice(1)}
+                            </span>
+                        </div>
+                        <div class="media-preview-container">
+                            <img src="${mediaItem.thumbnail}" alt="${mediaItem.name}" class="media-preview-image">
+                            <div class="media-overlay">
+                                <button type="button" class="btn overlay-btn" onclick="document.getElementById('media-files').click()">
+                                    <i class="fas fa-camera"></i> Change Media
+                                </button>
+                            </div>
+                        </div>
+                        <div class="upload-info">
+                            <input type="file" id="media-files" accept="image/*,video/*,application/pdf" class="hidden">
+                            <p class="upload-hint"><i class="fas fa-info-circle"></i> Click the image to upload new media or drag and drop</p>
+                            <p class="file-constraints">Supported formats: JPG, PNG, MP4, PDF (max. 50MB)</p>
+                        </div>
+                    </div>
+                    <div class="media-details-section">
+                        <div class="form-group">
+                            <label for="media-name">Media Name</label>
+                            <input type="text" id="media-name" class="form-control" value="${mediaItem.name}" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="media-category">Category</label>
+                                <select id="media-category" class="form-control" required>
+                                    <option value="artwork" ${mediaItem.category === 'artwork' ? 'selected' : ''}>Artwork</option>
+                                    <option value="event" ${mediaItem.category === 'event' ? 'selected' : ''}>Event</option>
+                                    <option value="press" ${mediaItem.category === 'press' ? 'selected' : ''}>Press</option>
+                                    <option value="other" ${mediaItem.category === 'other' ? 'selected' : ''}>Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="media-status">Status</label>
+                                <select id="media-status" class="form-control">
+                                    <option value="active">Active</option>
+                                    <option value="draft">Draft</option>
+                                    <option value="archived">Archived</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="media-tags">Tags</label>
+                            <div class="tags-input-container">
+                                <input type="text" id="media-tags" class="form-control" value="${mediaItem.tags}" placeholder="Add tags separated by commas">
+                                <i class="fas fa-tags"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="media-description">Description</label>
+                            <textarea id="media-description" class="form-control" rows="4" placeholder="Enter media description...">${mediaItem.description}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Media Information</label>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span class="info-label">Size</span>
+                                    <span class="info-value">2.4 MB</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Dimensions</span>
+                                    <span class="info-value">1920 x 1080</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Created</span>
+                                    <span class="info-value">Mar 15, 2024</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Modified</span>
+                                    <span class="info-value">Mar 16, 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-actions">
+                            <button class="btn danger-btn" onclick="deleteMedia(${id})">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                            <div class="right-actions">
+                                <button class="btn secondary-btn" onclick="closeModal('media-modal')">Cancel</button>
+                                <button class="btn primary-btn" onclick="saveMediaChanges(${id})">
+                                    <i class="fas fa-save"></i> Save Changes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            `;
+
+            // Reinitialize file upload handlers
+            initializeFileUpload();
+        }
+
+        function saveMediaChanges(id) {
+            // This would typically save the changes to the server
+            showToast('Success', 'Media updated successfully', 'success');
+            closeModal('media-modal');
+            loadMediaItems(currentPage);
+        }
+
+        function initializeFileUpload() {
+            const mediaFiles = document.getElementById('media-files');
+            const uploadArea = document.querySelector('.upload-area');
+            
+            if (mediaFiles && uploadArea) {
+                mediaFiles.addEventListener('change', handleFileSelect);
+
+                uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                    uploadArea.classList.add('dragover');
+            });
+
+                uploadArea.addEventListener('dragleave', () => {
+                    uploadArea.classList.remove('dragover');
+            });
+
+                uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                    uploadArea.classList.remove('dragover');
+                    
+                    if (e.dataTransfer.files.length > 0) {
+                        mediaFiles.files = e.dataTransfer.files;
+                        handleFileSelect({ target: mediaFiles });
+                    }
+                });
+            }
+        }
+
+        // Initialize media items on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadMediaItems(1);
+        });
+    </script>
+
+    <style>
+        /* Media Table Styles */
+        .table-responsive {
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .data-table th {
+            background: var(--secondary-bg);
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .media-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .media-thumbnail {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--secondary-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .media-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .media-thumbnail i {
+            font-size: 24px;
+            color: var(--text-muted);
+        }
+
+        .media-details h4 {
+            margin: 0 0 4px 0;
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
+        .media-details p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .media-type-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .media-type-badge.image { background: #E2F5FF; color: #4DA6FF; }
+        .media-type-badge.video { background: #FFE2E2; color: #FF4D4D; }
+        .media-type-badge.document { background: #E2FFE2; color: #4DC24D; }
+
+        .media-size {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .media-date {
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+
+        .table-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .table-actions .btn {
+            padding: 6px;
+            border-radius: 6px;
+            color: var(--text-color);
+            background: transparent;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .table-actions .btn:hover {
+            background: var(--hover-bg);
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Filter Styles */
+        .filters {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .filter-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .filter-group label {
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            background: var(--input-bg);
+            color: var(--text-color);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 2px var(--primary-color-light);
+        }
+
+        .filter-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-start;
+        }
+
+        /* Dark Mode Adjustments */
+        .dark-mode .table-responsive {
+            background: var(--dark-card);
+        }
+
+        .dark-mode .data-table th {
+            background: var(--dark-secondary);
+        }
+
+        .dark-mode .filters {
+            background: var(--dark-card);
+        }
+
+        .dark-mode .form-control {
+            background: var(--dark-input);
+            border-color: var(--dark-border);
+        }
+
+        .dark-mode .table-actions .btn {
+            background: var(--dark-secondary);
+            border-color: var(--dark-border);
+        }
+
+        .dark-mode .table-actions .btn:hover {
+            background: var(--dark-hover);
+        }
+
+        /* Preview Modal Styles */
+        .modal.modal-large {
+            max-width: 1000px;
+            width: 90%;
+            height: 80vh;
+        }
+
+        .preview-container {
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .preview-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+            height: 100%;
+        }
+
+        .preview-main {
+            background: var(--secondary-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+        }
+
+        .preview-main img,
+        .preview-main video {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .preview-info {
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .preview-header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+        }
+
+        .preview-title {
+            margin: 0 0 8px 0;
+            font-size: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .preview-type {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .preview-details {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .detail-label {
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .detail-value {
+            color: var(--text-color);
+        }
+
+        .preview-description {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-top: 16px;
+        }
+
+        .preview-actions {
+            margin-top: auto;
+            display: flex;
+            gap: 12px;
+        }
+
+        .preview-actions .btn {
+            flex: 1;
+        }
+
+        /* Edit Modal Enhancements */
+        .edit-form {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            padding: 20px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .media-preview-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            width: 100%;
+        }
+
+        .preview-header {
+            padding: 16px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .preview-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        .media-preview-container {
+            position: relative;
+            aspect-ratio: 16/9;
+            max-height: 300px;
+            background: var(--secondary-bg);
+            overflow: hidden;
+        }
+
+        .media-preview-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: all 0.3s ease;
+        }
+
+        .media-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .media-preview-container:hover .media-overlay {
+            opacity: 1;
+        }
+
+        .media-preview-container:hover .media-preview-image {
+            transform: scale(1.05);
+        }
+
+        .overlay-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .overlay-btn:hover {
+            background: var(--primary-color-dark);
+            transform: translateY(-2px);
+        }
+
+        .upload-info {
+            padding: 16px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            background: var(--secondary-bg);
+        }
+
+        .upload-hint {
+            color: var(--text-color);
+            margin: 0 0 8px 0;
+            font-size: 0.9rem;
+        }
+
+        .file-constraints {
+            color: var(--text-muted);
+            margin: 0;
+            font-size: 0.8rem;
+        }
+
+        .media-details-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: var(--card-shadow);
+            display: grid;
+            gap: 24px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .form-control {
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            background: var(--input-bg);
+            color: var(--text-color);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 2px var(--primary-color-light);
+        }
+
+        .tags-input-container {
+            position: relative;
+        }
+
+        .tags-input-container i {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            background: var(--secondary-bg);
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 8px;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .info-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .info-value {
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 24px;
+        }
+
+        .right-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .danger-btn {
+            background: var(--danger-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .danger-btn:hover {
+            background: var(--danger-color-dark);
+        }
+
+        /* Dark mode adjustments */
+        .dark-mode .media-preview-section,
+        .dark-mode .media-details-section {
+            background: var(--dark-card);
+        }
+
+        .dark-mode .info-grid,
+        .dark-mode .upload-info {
+            background: var(--dark-secondary);
+        }
+
+        .dark-mode .media-preview-container {
+            background: var(--dark-secondary);
+        }
+    </style>
+</body>
+</html> 

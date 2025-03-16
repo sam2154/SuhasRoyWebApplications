@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "Rajiv Sharma",
+    "email": "rajiv.sharma@example.com",
+    "phone": "+91 98765 43210",
+    "subject": "Inquiry about Eternal Harmony",
+    "message": "I'm interested in purchasing the artwork 'Eternal Harmony'. Could you please provide more details about its availability and shipping options to Mumbai?",
+    "artworkId": 1,
+    "date": "2024-03-10T14:30:00",
+    "resolved": false
+  },
+  {
+    "id": 2,
+    "name": "Priya Patel",
+    "email": "priya.patel@example.com",
+    "phone": "+91 87654 32109",
+    "subject": "Commission Request",
+    "message": "I would like to commission a piece similar to 'Mystic Whispers' but with elements that reflect my family heritage from Gujarat. Is this something the artist would consider?",
+    "artworkId": 2,
+    "date": "2024-03-08T10:15:00",
+    "resolved": true
+  },
+  {
+    "id": 3,
+    "name": "Arun Kapoor",
+    "email": "arun.kapoor@example.com",
+    "phone": "+91 76543 21098",
+    "subject": "Exhibition Inquiry",
+    "message": "I represent a gallery in Bangalore and would be interested in discussing the possibility of hosting an exhibition of the artist's work later this year.",
+    "artworkId": null,
+    "date": "2024-03-05T16:45:00",
+    "resolved": false
+  },
+  {
+    "id": 4,
+    "name": "Meera Reddy",
+    "email": "meera.reddy@example.com",
+    "phone": "+91 65432 10987",
+    "subject": "Workshop Participation",
+    "message": "I'm interested in the upcoming workshop on Traditional Indian Painting Techniques. Are there any prerequisites for participation?",
+    "artworkId": null,
+    "date": "2024-03-01T09:20:00",
+    "resolved": true
+  },
+  {
+    "id": 5,
+    "name": "Vikram Singh",
+    "email": "vikram.singh@example.com",
+    "phone": "+91 54321 09876",
+    "subject": "Artwork Authentication",
+    "message": "I recently acquired a piece that I believe is by Suhas Roy from a private collector. I would like to get it authenticated. What is the process for this?",
+    "artworkId": null,
+    "date": "2024-02-28T13:10:00",
+    "resolved": false
+  }
+] 

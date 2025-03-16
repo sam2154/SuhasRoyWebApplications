@@ -1,0 +1,53 @@
+{
+  "artworks": {
+    "total": 120,
+    "available": 85,
+    "sold": 35,
+    "categories": {
+      "Abstract": 45,
+      "Figurative": 30,
+      "Contemporary": 25,
+      "Traditional": 20
+    },
+    "recentlyAdded": 8,
+    "recentlySold": 5
+  },
+  "events": {
+    "total": 24,
+    "upcoming": 6,
+    "current": 3,
+    "past": 15,
+    "categories": {
+      "Exhibition": 10,
+      "Workshop": 6,
+      "Talk": 5,
+      "Demonstration": 3
+    }
+  },
+  "media": {
+    "total": 78,
+    "publications": 22,
+    "news": 30,
+    "videos": 15,
+    "photographs": 11,
+    "recentlyAdded": 6
+  },
+  "inquiries": {
+    "total": 45,
+    "unresolved": 18,
+    "resolved": 27,
+    "thisMonth": 12,
+    "lastMonth": 15
+  },
+  "visitors": {
+    "thisMonth": 3250,
+    "lastMonth": 2980,
+    "growth": 9.06,
+    "topPages": [
+      {"page": "Artworks", "visits": 1250},
+      {"page": "Events", "visits": 850},
+      {"page": "About", "visits": 620},
+      {"page": "Contact", "visits": 530}
+    ]
+  }
+} 
